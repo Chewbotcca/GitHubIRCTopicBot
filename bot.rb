@@ -12,7 +12,7 @@ bot = Cinch::Bot.new do
     c.plugins.prefix = /^/
 
     # Load modules.
-    c.plugins.plugins = [AddIssueToTopic, RemoveIssueFromTopic, NickServ]
+    c.plugins.plugins = [AddIssueToTopic, RemoveIssueFromTopic, NickServ, SetAmountOfIssues]
   end
 end
 
