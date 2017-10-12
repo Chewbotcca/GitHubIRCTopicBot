@@ -1,5 +1,7 @@
 require 'cinch'
 
+CONFIG = YAML.load_file('config.yaml')
+
 Dir["#{File.dirname(__FILE__)}/plugins/*.rb"].each { |file| require file }
 
 bot = Cinch::Bot.new do
