@@ -1,4 +1,4 @@
-class AddIssueToTopic
+class RemoveIssueFromTopic
   include Cinch::Plugin
 
   match '[ChewbotccaIRC] Chewsterchew closed issue', use_prefix: :false, strip_colors: :true
