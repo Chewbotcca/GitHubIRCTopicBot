@@ -9,6 +9,8 @@ bot = Cinch::Bot.new do
     c.server = "irc.chew.pro"
     c.channels = ['#Chewbotcca']
 
+    c.plugins.prefix = /^/
+
     # Load modules.
     c.plugins.plugins = [AddIssueToTopic]
   end
