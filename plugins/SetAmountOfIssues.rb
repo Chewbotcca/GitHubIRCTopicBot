@@ -6,7 +6,8 @@ class SetAmountOfIssues
   def execute(m, args)
     if CONFIG['ownerhost'] == m.user.host
       topicsplit = m.channel.topic.split(' ')
-      topicsplit[10] = args.to_i
+      location = topicsplit.index { |s| s.include?('Open Issues:') } + 1
+      topicsplit[location] = args.to_i
       m.channel.topic = topicsplit.join(' ')
     else
       m.reply 'YOU ARENT OWNEr!??!!'
