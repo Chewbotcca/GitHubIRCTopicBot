@@ -33,3 +33,6 @@ AllCops:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Naming/FileName:
+  Enabled: false
