@@ -5,7 +5,7 @@ class AddIssueToTopic
 
   def execute(m, args)
     splitargs = args.split(' ')
-    if splitargs[1] == 'opened'
+    if splitargs[1] == 'opened' && splitargs[2] == 'issue'
       if "#{m.user.user}@#{m.user.host}" == 'notifico@ChewCraft-p8h.k4l.199.198.IP' && m.channel.name == '#Chewbotcca'
         topicsplit = m.channel.topic.split(' ')
         location = topicsplit.index { |s| s.include?('Issues:') } + 1
