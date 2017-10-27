@@ -7,7 +7,7 @@ class AddIssueToTopic
     splitargs = args.split(' ')
     if CONFIG['channels'].include?(m.channel.name)
       if splitargs[1] == 'opened' && splitargs[2] == 'issue'
-        if "#{m.user.user}@#{m.user.host}" == 'notifico@ChewCraft-p8h.k4l.199.198.IP' && m.channel.name == '#Chewbotcca'
+        if "#{m.user.user}@#{m.user.host}" == "notifico@#{CONFIG['notifico']}" && m.channel.name == '#Chewbotcca'
           topicsplit = m.channel.topic.split(' ')
           location = topicsplit.index { |s| s.include?('Issues:') } + 1
           topicsplit[location] = topicsplit[location].to_i + 1
