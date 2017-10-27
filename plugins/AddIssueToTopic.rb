@@ -1,7 +1,7 @@
 class AddIssueToTopic
   include Cinch::Plugin
 
-  match /\[IRC\] (.+)/, strip_colors: :true, use_prefix: :false
+  match /\[IRC\] (.+)/, strip_colors: true
 
   def execute(m, args)
     splitargs = args.split(' ')
