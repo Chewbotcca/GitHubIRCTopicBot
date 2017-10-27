@@ -10,3 +10,6 @@ nickservpass:
 
 # Your irc host
 ownerhost:
+
+# Notifico Hostmask/Hostname
+notifico: 
