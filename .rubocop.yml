@@ -1,9 +1,6 @@
 Metrics/LineLength:
   Max: 356
 
-Security/Eval:
-  Enabled: false
-
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
