@@ -8,9 +8,9 @@ Dir["#{File.dirname(__FILE__)}/plugins/*.rb"].each { |file| require file }
 bot = Cinch::Bot.new do
   configure do |c|
     # Bot Settings, Taken from Config.yaml
-    c.nick = "ForasthaBOT"
-    c.server = "irc.chew.pro"
-    c.channels = ['#Chewbotcca']
+    c.nick = CONFIG['nickname']
+    c.server = CONFIG['server']
+    c.channels = [CONFIG['channels']]
 
     c.plugins.prefix = /^/
 
