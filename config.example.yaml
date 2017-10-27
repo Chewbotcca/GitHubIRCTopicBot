@@ -1,7 +1,12 @@
+# Bot Nickname
 nickname:
+# Server IP
 server:
+# Channels to join
 channels:
 
-
+# Don't set this, use !nsregister
 nickservpass:
-ownerhost: 
+
+# Your irc host
+ownerhost:
