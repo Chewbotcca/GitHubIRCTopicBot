@@ -2,6 +2,7 @@ class Issues
   include Cinch::Plugin
 
   match /\[IRC\] (.+)/, strip_colors: true
+  match /~setrepo (.+)/, method: :setrepo
 
   def execute(m, args)
     splitargs = args.split(' ')
@@ -27,6 +28,17 @@ class Issues
           m.reply 'YOU ARENT NOTIFICO!!'
         end
       end
+    end
+  end
+
+  def setrepo(m, args)
+    if CONFIG['ownerhost'] == m.user.host
+      topicsplit = m.channel.topic.split(' ')
+      location = topicsplit.index { |s| s.include?('Issues:') } + 1
+      topicsplit[location] = args.to_i
+      m.channel.topic = topicsplit.join(' ')
+    else
+      m.reply 'YOU ARENT OWNEr!??!!'
     end
   end
 end

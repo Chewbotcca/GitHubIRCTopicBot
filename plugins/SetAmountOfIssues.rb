@@ -1,4 +1,4 @@
-class SetAmountOfIssues
+class SetRepo
   include Cinch::Plugin
 
   match /~issues (.+)/
@@ -18,16 +18,5 @@ class SetAmountOfIssues
     require 'yaml'
     data[betterchannelname] = "https://api.github.com/repos/#{author}/#{reponame}"
     File.open('data.yaml', 'w') { |f| f.write data.to_yaml }
-  end
-
-  def execute(m, args)
-    if CONFIG['ownerhost'] == m.user.host
-      topicsplit = m.channel.topic.split(' ')
-      location = topicsplit.index { |s| s.include?('Issues:') } + 1
-      topicsplit[location] = args.to_i
-      m.channel.topic = topicsplit.join(' ')
-    else
-      m.reply 'YOU ARENT OWNEr!??!!'
-    end
   end
 end
