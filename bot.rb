@@ -1,6 +1,7 @@
 require 'cinch'
 require 'yaml'
 require 'rest-client'
+require 'json'
 
 CONFIG = YAML.load_file('config.yaml')
 
@@ -16,7 +17,7 @@ bot = Cinch::Bot.new do
     c.plugins.prefix = /^/
 
     # Load modules.
-    c.plugins.plugins = [AddIssueToTopic, RemoveIssueFromTopic, NickServ, SetAmountOfIssues]
+    c.plugins.plugins = [AddIssueToTopic, RemoveIssueFromTopic, NickServ, SetAmountOfIssues, Update]
   end
 end
 
