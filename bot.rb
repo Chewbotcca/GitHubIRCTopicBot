@@ -1,5 +1,6 @@
 require 'cinch'
 require 'yaml'
+require 'rest-client'
 
 CONFIG = YAML.load_file('config.yaml')
 
