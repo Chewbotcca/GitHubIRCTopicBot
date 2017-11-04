@@ -2,7 +2,7 @@ class Issues
   include Cinch::Plugin
 
   match /\[IRC\] (.+)/, strip_colors: true
-  match /~setrepo (.+)/, method: :setrepo
+  match /~issues (.+)/, method: :issues
 
   def execute(m, args)
     splitargs = args.split(' ')
@@ -31,7 +31,7 @@ class Issues
     end
   end
 
-  def setrepo(m, args)
+  def issues(m, args)
     if CONFIG['ownerhost'] == m.user.host
       topicsplit = m.channel.topic.split(' ')
       location = topicsplit.index { |s| s.include?('Issues:') } + 1

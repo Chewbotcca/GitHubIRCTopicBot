@@ -1,7 +1,6 @@
 class SetRepo
   include Cinch::Plugin
 
-  match /~issues (.+)/
   match /~setrepo (.+)/, method: :setrepo
 
   def setrepo(m, repo)
