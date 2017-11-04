@@ -1,7 +1,7 @@
 class Issues
   include Cinch::Plugin
 
-  match /(.+)/, strip_colors: true
+  match /\[(.+)/, strip_colors: true
   match /~issues (.+)/, method: :issues
 
   def execute(m, args)
