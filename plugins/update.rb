@@ -1,7 +1,7 @@
 class Update
   include Cinch::Plugin
 
-  match /update (.+)/, method: :update
+  match /~update (.+)/, method: :update
 
   def update(m, update)
     if update == 'issues'
