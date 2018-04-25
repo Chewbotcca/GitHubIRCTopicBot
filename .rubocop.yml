@@ -33,3 +33,6 @@ Style/FrozenStringLiteralComment:
 
 Naming/FileName:
   Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
