@@ -16,19 +16,14 @@ class Issues
       m.reply 'Only a configured notifico! host can be used to modify the channel topic!'
       return
     end
-    if splitargs[2] == 'opened'
-      topicsplit = m.channel.topic.split(' ')
-      location = topicsplit.index { |s| s.include?('Issues:') } + 1
-      topicsplit[location] = topicsplit[location].to_i + 1
-      m.channel.topic = topicsplit.join(' ')
-    end
-
-    if splitargs[2] == 'closed'
-      topicsplit = m.channel.topic.split(' ')
-      location = topicsplit.index { |s| s.include?('Issues:') } + 1
-      topicsplit[location] = topicsplit[location].to_i - 1
-      m.channel.topic = topicsplit.join(' ')
-    end
+    topicsplit = m.channel.topic.split(' ')
+    location = topicsplit.index { |s| s.include?('Issues:') } + 1
+    topicsplit[location] = if splitargs[2] == 'opened'
+                             topicsplit[location].to_i + 1
+                           elsif splitargs[2] == 'closed'
+                             topicsplit[location].to_i - 1
+                           end
+    m.channel.topic = topicsplit.join(' ')
   end
 
   def issues(m, args)
